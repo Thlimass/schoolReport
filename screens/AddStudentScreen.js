@@ -2,36 +2,33 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 const AddStudentScreen = ({ navigation }) => {
-  const [matricula, setMatricula] = useState('');
-  const [nome, setNome] = useState('');
-  const [media, setMedia] = useState('');
+  const [studentRegistration, setStudentRegistration] = useState('');
+  const [studentName, setStudentName] = useState('');
+  const [studentAverage, setStudentAverage] = useState('');
 
   const handleAddStudent = () => {
-    // Aqui você pode adicionar a lógica para armazenar os dados em algum lugar
-    // Pode ser um estado global (Context API ou Redux) ou AsyncStorage, por exemplo
-    // Neste exemplo, apenas exibiremos os dados na próxima tela
-    navigation.navigate('ViewStudents', { matricula, nome, media });
+    navigation.navigate('ViewStudents', { studentRegistration, studentName, studentAverage });
   };
 
   return (
     <View style={styles.container}>
       <TextInput
         placeholder="Sua Matrícula..."
-        value={matricula}
+        value={studentRegistration}
         style={styles.textInput}
-        onChangeText={text => setMatricula(text)}
+        onChangeText={text => setStudentRegistration(text)}
       />
       <TextInput
         placeholder="Seu Nome..."
-        value={nome}
+        value={studentName}
         style={styles.textInput}
-        onChangeText={text => setNome(text)}
+        onChangeText={text => setStudentName(text)}
       />
       <TextInput
         placeholder="Sua Média..."
-        value={media}
+        value={studentAverage}
         style={styles.textInput}
-        onChangeText={text => setMedia(text)}
+        onChangeText={text => setStudentAverage(text)}
         keyboardType="numeric"
       />
       <TouchableOpacity style={styles.btnAddStudent} onPress={handleAddStudent}>

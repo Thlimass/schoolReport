@@ -2,22 +2,22 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput, Content } from 'react-native';
 
 const ViewStudentsScreen = ({ route }) => {
-  const { matricula, nome, media } = route.params;
+  const { studentRegistration, studentName, studentAverage } = route.params;
 
   return (
   <View style={styles.container}>
       <Text style={styles.titleView}>Informações do Aluno</Text>
       <View style={styles.view}>
         <Text style={styles.textLabel}>Matrícula:</Text>
-        <Text style={styles.textContent}>{matricula}</Text>
+        <Text style={styles.textContent}>{studentRegistration}</Text>
       </View>
       <View style={styles.view}>
         <Text style={styles.textLabel}>Nome:</Text>
-        <Text style={styles.textContent}>{nome}</Text>
+        <Text style={styles.textContent}>{studentName}</Text>
       </View>
       <View style={styles.view}>
         <Text style={styles.textLabel}>Média:</Text>
-        <Text style={styles.textContent}>{media}</Text>
+        <Text style={styles.textContent}>{studentAverage}</Text>
       </View>
     </View>
   );
