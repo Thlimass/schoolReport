@@ -5,8 +5,13 @@ const AddStudentScreen = ({ navigation }) => {
   const [studentRegistration, setStudentRegistration] = useState('');
   const [studentName, setStudentName] = useState('');
   const [studentAverage, setStudentAverage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleAddStudent = () => {
+    if (!studentRegistration || !studentName || !studentAverage) {
+        setErrorMessage('Por favor, preencha todos os campos.');
+        return;
+   }
     navigation.navigate('ViewStudents', { studentRegistration, studentName, studentAverage });
   };
 
@@ -31,6 +36,7 @@ const AddStudentScreen = ({ navigation }) => {
         onChangeText={text => setStudentAverage(text)}
         keyboardType="numeric"
       />
+      {errorMessage ? <Text style={{ color: 'red' }}>{errorMessage}</Text> : null}
       <TouchableOpacity style={styles.btnAddStudent} onPress={handleAddStudent}>
          <Text style={{color:'white', textAlign:'center'}}>Adicionar Aluno</Text>
       </TouchableOpacity>
