@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, Text, View, TextInput, Content } from 'react-native';
 
 const ViewStudentsScreen = ({ route }) => {
   const { studentRegistration, studentName, studentAverage } = route.params;
+
+    useEffect(() => {
+      // Limpar os campos assim que o componente for montado
+      // Isso garante que os campos estejam vazios ao retornar para a página inicial
+      route.params = {};
+    }, []);
+
 
   return (
   <View style={styles.container}>
