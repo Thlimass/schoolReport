@@ -12,7 +12,7 @@ export default function App() {
   <NavigationContainer>
       <Stack.Navigator initialRouteName="AddStudent">
         <Stack.Screen name="AddStudent" component={AddStudentScreen} options={{ title: 'Adicionar Aluno' }} />
-        <Stack.Screen name="ViewStudents" component={ViewStudentsScreen} options={{ title: 'Alunos Registrados' }} />
+        <Stack.Screen name="ViewStudents" component={ViewStudentsScreen} options={{ title: 'Aluno Registrado' }} />
       </Stack.Navigator>
   </NavigationContainer>
   );
