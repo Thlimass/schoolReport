@@ -17,6 +17,8 @@ ou
 ```
 yarn global add expo-cli
 ```
+Além disso, você precisará ter o Node.js instalado em sua máquina. A versão recomendada do Node.js para este projeto é a `v14.x.x`.
+
 
 ## Instalação
 
