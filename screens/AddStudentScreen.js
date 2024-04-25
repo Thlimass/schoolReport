@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 
 const AddStudentScreen = ({ navigation }) => {
@@ -48,9 +48,9 @@ const AddStudentScreen = ({ navigation }) => {
         keyboardType="numeric"
       />
       {errorMessage ? <Text style={{ color: 'red' }}>{errorMessage}</Text> : null}
-      <TouchableOpacity style={styles.btnAddStudent} onPress={handleAddStudent}>
+      <Pressable style={styles.btnAddStudent} onPress={handleAddStudent}>
          <Text style={{color:'white', textAlign:'center'}}>Adicionar Aluno</Text>
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 };
