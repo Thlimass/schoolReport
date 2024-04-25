@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 
 const AddStudentScreen = ({ navigation }) => {
   const [studentRegistration, setStudentRegistration] = useState('');
@@ -14,6 +15,16 @@ const AddStudentScreen = ({ navigation }) => {
    }
     navigation.navigate('ViewStudents', { studentRegistration, studentName, studentAverage });
   };
+
+  useFocusEffect(
+      React.useCallback(() => {
+        // Limpar os campos quando a tela estiver em foco
+        setStudentRegistration('');
+        setStudentName('');
+        setStudentAverage('');
+        setErrorMessage('');
+      }, [])
+    );
 
   return (
     <View style={styles.container}>
